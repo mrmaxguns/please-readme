@@ -1,5 +1,5 @@
 def generate_readme(data: dict) -> None:
-    filename = data['filename']
+    filename = data["filename"]
     name = data["project-name"]
     description = data["description"]
     getting_started = data["getting-started"]
@@ -7,42 +7,6 @@ def generate_readme(data: dict) -> None:
     installing = data["installing"]
     tests = data["tests"]
     deployment = data["deployment"]
-
-data = {
-    "filename": "README.md",
-    "project-name": "Chaw",
-    "description": "This is the best chaw in the world.",
-    "getting-started": "Just buy a starter pack of chaw",
-    "prerequisites": ["chawsitcks", "caw food barrier"],
-    "installing": "Just do it",
-    "tests": "Test the chobani",
-    "deployment": "oof",
-    "built-with": {"Chaw programming language": ["chaw.org", "the language"]},
-    "contributing": "Read contributing.md",
-    "versioning": "sematic",
-    "authors": {"bobik": ["did stuff", "bobikobik33", "github.com/bobikobik33"]},
-    "license": "MIT",
-    "acknowledgments": ['Thankst to all', 'yay']
-}
-generate_readme(data)
-
-data = {
-    "filename": "README.md",
-    "project-name": "Chaw",
-    "description": "This is the best chaw in the world.",
-    "getting-started": "Just buy a starter pack of chaw",
-    "prerequisites": ["chawsitcks", "caw food barrier"],
-    "installing": "Just do it",
-    "tests": "Test the chobani",
-    "deployment": "oof",
-    "built-with": {"Chaw programming language": ["chaw.org", "the language"]},
-    "contributing": "Read contributing.md",
-    "versioning": "sematic",
-    "authors": {"bobik": ["did stuff", "bobikobik33", "github.com/bobikobik33"]},
-    "license": "MIT",
-    "acknowledgments": ['Thankst to all', 'yay']
-}
-generate_readme(data)
     built_with = data["built-with"]
     contributing = data["contributing"]
     versioning = data["versioning"]
@@ -58,7 +22,12 @@ generate_readme(data)
         template += f"\n{description}"
 
     if getting_started is not None:
-        template += f"\n\n## Getting Started\n{getting_started}"
+        template += f"\n\n## Getting Started"
+        for keys, values in getting_started.items():
+            if values[1] is None:
+                template += f"\n{keys}. {values[0]}"
+            else:
+                template += f"\n{keys}. {values[0]:}\n```\n{values[1]}\n```"
 
     if prerequisites is not None:
         template += f"\n\n## Prerequisites"
@@ -80,24 +49,6 @@ generate_readme(data)
             template += f"\n* [{keys}]({values[0]}) - {values[1]}"
 
     if contributing is not None:
-
-data = {
-    "filename": "README.md",
-    "project-name": "Chaw",
-    "description": "This is the best chaw in the world.",
-    "getting-started": "Just buy a starter pack of chaw",
-    "prerequisites": ["chawsitcks", "caw food barrier"],
-    "installing": "Just do it",
-    "tests": "Test the chobani",
-    "deployment": "oof",
-    "built-with": {"Chaw programming language": ["chaw.org", "the language"]},
-    "contributing": "Read contributing.md",
-    "versioning": "sematic",
-    "authors": {"bobik": ["did stuff", "bobikobik33", "github.com/bobikobik33"]},
-    "license": "MIT",
-    "acknowledgments": ['Thankst to all', 'yay']
-}
-generate_readme(data)
         template += f"\n\n## Contributing\n{contributing}"
 
     if versioning is not None:
@@ -116,7 +67,7 @@ generate_readme(data)
         for i in acknowledgments:
             template += f"\n* {i}"
 
-    readme = open(filename, 'w+')
+    readme = open(filename, "w+")
     readme.write(template)
     readme.close()
 
