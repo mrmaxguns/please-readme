@@ -23,7 +23,8 @@ def main():
 
 
     if args['version']:
-        print('v0.5.3')
+        print('v0.5.4')
+        quit()
 
 
     data = gather_user_data.gather_user_data()
@@ -33,7 +34,7 @@ def main():
         print(f"\n\n{generator.generate_template()}")
     else:
         generator.create(data[0])
-        print(f'Your readme file at {data[0]} has been crated')
+        print(f'Your readme file at {data[0]} has been created')
 
 
 if __name__ == '__main__':
