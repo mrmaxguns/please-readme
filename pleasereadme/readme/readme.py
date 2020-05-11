@@ -54,12 +54,18 @@ class CustomReadme:
         1. Read contributing.md
         2. Submit a pull request
     """
-
+    # Run on class initiation
     def __init__(self, title=None, description=None, sections=None):
+        # Set title to Title if none
         self.title = title or "Title"
+
+        # Set description to '' if none
         self.description = description or ""
+
+        # set unordered_secs to sections or {} if none
         unordered_secs = sections or {}
 
+        # Set self.sections as an ordered dictionary
         self.sections = OrderedDict(unordered_secs)
 
     def generate_template(self) -> str:
@@ -80,17 +86,25 @@ class CustomReadme:
             title, description and sections (see help(CustomReadme) for more
             info on how the data is translated)
         """
+        # Add the title to the template
         template = f"# {self.title}"
 
+        # Add a description if it is not blank
         if self.description != "":
             template += f"\n{self.description}"
 
+        # For every section
         for section_names, section_data in self.sections.items():
+            # If the section is blank, don't add it, else:
             if section_data != "":
+                # Write the title for the section
                 template += f"\n\n## {section_names}"
 
+                # Order the data as an ordered dict
                 section_data = OrderedDict(section_data)
 
+                # For every item in the section, convert it to markdown and add
+                # it to the template
                 for part_id, part_data in section_data.items():
                     option = part_data[0]
 
@@ -125,6 +139,7 @@ class CustomReadme:
                     else:
                         template += f"\n {part_data[1]}"
 
+        # Return the template
         return template
 
     def create(self, path=None) -> str:
@@ -143,13 +158,18 @@ class CustomReadme:
         -------
         *   template (str): the template used to generate the file
         """
+        # Set the readme file path to README.md if none is specified
         path = path or "README.md"
+
+        # generate the template
         template = self.generate_template()
 
+        # Add the template to the file
         readme = open(path, "w+")
         readme.write(template)
         readme.close()
 
+        # Return the template
         return template
 
 
@@ -216,6 +236,7 @@ class StandardReadme(CustomReadme):
         license=None,
         acknowledgements=None,
     ):
+        # Set defaults if not specified
         self.title = title or "Title"
 
         self.description = description or ("Description", "")
@@ -229,6 +250,7 @@ class StandardReadme(CustomReadme):
         self.license = license or ("License", "")
         self.acknowledgements = acknowledgements or ("Acknowledgements", "")
 
+        # Order the sections
         self.sections = OrderedDict(
             [
                 self.getting_started,
