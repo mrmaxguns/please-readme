@@ -1,5 +1,5 @@
-import gather_user_data
-import generate_readme
+from pleasereadme import gather_user_data
+from pleasereadme import generate_readme
 import argparse
 
 def main():
@@ -23,7 +23,7 @@ def main():
 
 
     if args['version']:
-        print('v0.5.2')
+        print('v0.5.3')
 
 
     data = gather_user_data.gather_user_data()
