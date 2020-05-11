@@ -54,6 +54,7 @@ class CustomReadme:
         1. Read contributing.md
         2. Submit a pull request
     """
+
     # Run on class initiation
     def __init__(self, title=None, description=None, sections=None):
         # Set title to Title if none
@@ -222,6 +223,7 @@ class StandardReadme(CustomReadme):
     we use [sematic versioning](semver.org)
     ```v1.0.1```
     """
+
     def __init__(
         self,
         title=None,
