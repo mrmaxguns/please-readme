@@ -2,7 +2,7 @@ import gather_user_data
 import generate_readme
 import argparse
 
-def main():
+def main()
     # Create the parser
     main_parser = argparse.ArgumentParser(
         prog="pleasereadme", description="Generate a README markdown file"
@@ -23,7 +23,7 @@ def main():
 
 
     if args['version']:
-        print('v0.5.1')
+        print('v0.5.0')
 
 
     data = gather_user_data.gather_user_data()
