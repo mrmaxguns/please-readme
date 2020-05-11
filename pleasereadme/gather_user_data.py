@@ -51,9 +51,7 @@ def gather_user_data() -> tuple:
     ).strip()
 
     # Get project title
-    title = input(
-        f"\n{bcolors.WARNING}The name of your project{bcolors.ENDC} (MyApp) "
-    )
+    title = input(f"\n{bcolors.WARNING}The name of your project{bcolors.ENDC} (MyApp) ")
 
     # Get project short description
     description = input(
@@ -77,7 +75,7 @@ def gather_user_data() -> tuple:
             f"{bcolors.WARNING}Add a prerequisite - ex. Python: {bcolors.ENDC}"
         )
 
-        if prereq == '':
+        if prereq == "":
             break
 
         prereq_link = input(
@@ -97,13 +95,13 @@ def gather_user_data() -> tuple:
         install_step = input(
             f"{bcolors.WARNING}An explanation for the step: (push enter to skip)\n{bcolors.ENDC}"
         )
-        if install_step == '':
+        if install_step == "":
             break
         install_code = input(
             f"{bcolors.WARNING}Add any install code pertaining to the step (push enter if no code for this step)\n{bcolors.ENDC}"
         )
 
-        if install_code == '':
+        if install_code == "":
             installing.append(install_step)
         else:
             installing.append(f"{install_step}\n```\n{install_code}\n```")
@@ -127,7 +125,7 @@ def gather_user_data() -> tuple:
         built_with_name = input(
             f"{bcolors.WARNING}The name of the software used: {bcolors.ENDC}"
         )
-        if built_with_name == '':
+        if built_with_name == "":
             break
         built_with_link = input(
             f"{bcolors.WARNING}A link to the software: {bcolors.ENDC}"
@@ -135,7 +133,9 @@ def gather_user_data() -> tuple:
         built_with_description = input(
             f"{bcolors.WARNING}A short 5 letter phrase describing what the software did: {bcolors.ENDC}"
         )
-        built_with.append(f"[{built_with_name}]({built_with_link}) - {built_with_description}")
+        built_with.append(
+            f"[{built_with_name}]({built_with_link}) - {built_with_description}"
+        )
 
     # How to contribute
     contributing = input(
@@ -143,9 +143,7 @@ def gather_user_data() -> tuple:
     )
 
     # Versioning scheme
-    versioning = input(
-        f"\n{bcolors.WARNING}Versioning (semver) {bcolors.ENDC}"
-    )
+    versioning = input(f"\n{bcolors.WARNING}Versioning (semver) {bcolors.ENDC}")
 
     # Authors/contributors
     authors = []
@@ -153,10 +151,8 @@ def gather_user_data() -> tuple:
         f"\n{bcolors.WARNING}List any main authors that helped contribute{bcolors.ENDC}"
     )
     while True:
-        author_name = input(
-            f"{bcolors.WARNING}The name of the author: {bcolors.ENDC}"
-        )
-        if author_name == '':
+        author_name = input(f"{bcolors.WARNING}The name of the author: {bcolors.ENDC}")
+        if author_name == "":
             break
 
         author_contribution = input(
@@ -171,12 +167,12 @@ def gather_user_data() -> tuple:
             f"{bcolors.WARNING}A link to the user's profile/homepage: {bcolors.ENDC}"
         )
 
-        authors.append(f"**{author_name}** - *{author_contribution}* - [{author_uname}]({author_link})")
+        authors.append(
+            f"**{author_name}** - *{author_contribution}* - [{author_uname}]({author_link})"
+        )
 
     # License for the project
-    license = input(
-        f"\n{bcolors.WARNING}Project license (MIT): {bcolors.ENDC}"
-    )
+    license = input(f"\n{bcolors.WARNING}Project license (MIT): {bcolors.ENDC}")
 
     # Any last notes
     acknowledgements = []
@@ -184,48 +180,44 @@ def gather_user_data() -> tuple:
         f"\n{bcolors.WARNING}Acknowledgements - hat tips, inspiration, etc.{bcolors.ENDC}"
     )
     while True:
-        acknowledgement = input(
-            f"{bcolors.WARNING}* {bcolors.ENDC}"
-        )
-        if acknowledgement == '':
+        acknowledgement = input(f"{bcolors.WARNING}* {bcolors.ENDC}")
+        if acknowledgement == "":
             break
         acknowledgements.append(acknowledgement)
 
-
     ### --- Set empty lists to '' and fill in blank areas --- ###
-    if filepath == '':
+    if filepath == "":
         filepath = f"{os.getcwd()}/README.md"
 
-    if title == '':
+    if title == "":
         title = "MyApp"
 
     if prerequisites == []:
-        prerequisites = ''
+        prerequisites = ""
 
     if installing == []:
-        installing = ''
+        installing = ""
 
     if built_with == []:
-        built_with = ''
+        built_with = ""
 
-    if contributing == '':
-        contributing = 'We love contributions, Please read [CONTRIBUTING.md](CONTRIBUTING.md) for information'
+    if contributing == "":
+        contributing = "We love contributions, Please read [CONTRIBUTING.md](CONTRIBUTING.md) for information"
 
-    if versioning == '':
-        versioning = 'We use [SemVer](semver.org) for versioning. For the versions available, see the tags on this repository.'
+    if versioning == "":
+        versioning = "We use [SemVer](semver.org) for versioning. For the versions available, see the tags on this repository."
 
     if authors == []:
-        authors = ''
+        authors = ""
 
-    if license == '':
-        license = 'We use the MIT license, see [LICENSE.md](LICENSE.md) for details'
+    if license == "":
+        license = "We use the MIT license, see [LICENSE.md](LICENSE.md) for details"
 
     if acknowledgements == []:
-        acknowledgements = ''
-
+        acknowledgements = ""
 
     ### Print Confirmation
-    print('Please double check the info you entered: ')
+    print("Please double check the info you entered: ")
     print(f"File path: {filepath}")
     print(f"Project title: {title}")
     print("Description:")
@@ -233,88 +225,91 @@ def gather_user_data() -> tuple:
     print("Installing explanation:")
     print(installing_explanation)
     print("Prerequisites:")
-    if prerequisites != '':
+    if prerequisites != "":
         for i in prerequisites:
             print(f"* {i}")
     else:
         print(None)
     print("Installing:")
-    if installing != '':
+    if installing != "":
         for i in installing:
             print(f"* {i}")
     else:
         print(None)
-    print('Tests:')
+    print("Tests:")
     print(tests)
-    print('Deployment:')
+    print("Deployment:")
     print(deployment)
     print("Built with:")
-    if built_with != '':
+    if built_with != "":
         for i in built_with:
             print(f"* {i}")
     else:
         print(None)
-    print(f'Contributing: {contributing}')
-    print(f'Versioning: {versioning}')
-    print(f'License: {license}')
+    print(f"Contributing: {contributing}")
+    print(f"Versioning: {versioning}")
+    print(f"License: {license}")
 
     # Ask the user if all the info is correct
-    proceed = input('Proceed? [Y, n] ')
-    if proceed.lower().startswith('n'):
+    proceed = input("Proceed? [Y, n] ")
+    if proceed.lower().startswith("n"):
         return ()
 
     # Set up the tuples of data
-    if installing_explanation == '':
+    if installing_explanation == "":
         installing_explanation_data = ("Getting Started", "")
     else:
-        installing_explanation_data = ("Getting Started", [("0", ["text", installing_explanation])])
+        installing_explanation_data = (
+            "Getting Started",
+            [("0", ["text", installing_explanation])],
+        )
 
-    if prerequisites == '':
+    if prerequisites == "":
         prerequisites_data = ("Prerequisites", "")
     else:
         prerequisites_data = ("Prerequisites", [("0", ["ul", prerequisites])])
 
-    if installing == '':
+    if installing == "":
         installing_data = ("Installing", "")
     else:
         installing_data = ("Installing", [("0", ["ol", installing])])
 
-    if tests == '':
+    if tests == "":
         tests_data = ("Tests", "")
     else:
         tests_data = ("Tests", [("0", ["text", tests])])
 
-    if deployment == '':
+    if deployment == "":
         deployment_data = ("Deployment", "")
     else:
         deployment_data = ("Deployment", [("0", ["text", deployment])])
 
-    if built_with == '':
+    if built_with == "":
         built_with_data = ("Built With", "")
     else:
         built_with_data = ("Built With", [("0", ["ul", built_with])])
 
-    if contributing == '':
+    if contributing == "":
         contributing_data = ("Contributing", "")
     else:
         contributing_data = ("Contributing", [("0", ["text", contributing])])
 
-    if versioning == '':
+    if versioning == "":
         versioning_data = ("Versioning", "")
     else:
         versioning_data = ("Versioning", [("0", ["text", versioning])])
 
-    if authors == '':
+    if authors == "":
         authors_data = ("Authors", "")
     else:
         authors_data = ("Authors", [("0", ["ul", authors])])
 
-    if license == '':
+    if license == "":
         license_data = ("License", "")
     else:
         license_data = ("License", [("0", ["text", license])])
 
-    if acknowledgements == '':
+    if acknowledgements == "":
         acknowledgements_data = ("Acknowledgements", "")
     else:
         acknowledgements_data = ("Acknowledgements", [("0", ["ul", acknowledgements])])
@@ -335,6 +330,6 @@ def gather_user_data() -> tuple:
             versioning_data,
             authors_data,
             license_data,
-            acknowledgements_data
-        ]
+            acknowledgements_data,
+        ],
     )
