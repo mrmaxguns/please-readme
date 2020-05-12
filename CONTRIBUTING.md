@@ -9,11 +9,11 @@ I-1: A "contributor" or "author" or "member" is any person who opens up and issu
 the code or any material within the "please-readme" repository.
 
 I-2: Contributors must be kind, helpful, on-topic and encouraging to other authors. This includes
-* I-2-a: Keeping comments in any verbal, written or audio communnication:
-    * I-2-a: on-topic meaning pertaining to the code, documentation or any files in this repository
-    * I-2-b: respectful and kind meaning no personally attacking other contributors, and striving not to use any of the
+* I-2a: Keeping comments in any verbal, written or audio communnication:
+    * I-2a1: on-topic meaning pertaining to the code, documentation or any files in this repository
+    * I-2a2: respectful and kind meaning no personally attacking other contributors, and striving not to use any of the
       words found on [this list](https://www.cs.cmu.edu/~biglou/resources/bad-words.txt)
-    * I-2-c: helpful meaning adressing questions with answers that may help the asker and writing comments that 
+    * I-2a3: helpful meaning adressing questions with answers that may help the asker and writing comments that 
       actively and positively impact the conversation.
 
 ## II. The Code
@@ -24,3 +24,14 @@ II-2: The code must be clean as defined below. Clean code is code that has...
 * II-2b: docstrings explaining classes and functions
 * II-2c: two spaces underneath functions where code below is present
 * II-2d: lines no longer than 79 characters
+* II-2e: chunks of code broken logically down into separate functions
+
+II-3: The following commands must be performed inside the please-readme directory before submitting a pull request:
+* II-3a: `black . -l 79`
+* II-3b: the requirements.txt file must be updated with all new third party packages
+
+## III. The Pull Request
+III-1: "Pull Request" is a github request to merge two different branches and/or repositories based on improvements
+III-2: "member" is any user with write-access to this repository
+
+III-2: Pull requests must have a title, an explanation of changes, and the code must follow all the rules stated above and below before being approved by **at least ONE member**.
