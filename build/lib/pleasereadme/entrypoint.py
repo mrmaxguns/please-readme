@@ -23,7 +23,7 @@ def main():
 
 
     if args['version']:
-        print('v0.5.4')
+        print('v0.5.5')
         quit()
 
 

@@ -5,7 +5,7 @@ with open("SIMPLE_USAGE.md", "r") as fh:
 
 setuptools.setup(
     name="please-readme",
-    version="0.5.4",
+    version="0.5.5",
     author="Maxim Rebguns",
     author_email="mrmaxguns@gmail.com",
     description="A readme generation package",
