@@ -28,6 +28,10 @@ def main():
 
 
     data = gather_user_data.gather_user_data()
+
+    if data == ():
+        quit()
+
     generator = generate_readme.CustomReadme(data[1], data[2], data[3])
 
     if args['print']:
