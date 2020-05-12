@@ -3,8 +3,10 @@ We love programming, but one thing we have to do is write readmes. Wouldn't it b
 
 We love your contributions, so go ahead, look below and see how to contribute. P.S: for those asking, yes this readme was made by please-readme.
 
+See the documentation at https://github.com/mrmaxguns/please-readme/wiki
+
 ## Getting Started
-Here we will go through how to set up a copy of please-readme on your local machine for development purposes. See `SIMPLE_USAGE.md` for how to install and use the package.
+Here we will go through how to set up a copy of please-readme on your local machine for development purposes. See the "wiki" tab for the actual documentation.
 
 ## Prerequisites
 * [Python 3.6 or greater](https://www.python.org/downloads/)
