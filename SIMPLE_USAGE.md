@@ -3,5 +3,5 @@ Please readme is the ultimate package for those who like to develop, not stay up
 
 # Installation
 ```
-pip install -i https://test.pypi.org/simple/ please-readme
+pip install please-readme
 ```
