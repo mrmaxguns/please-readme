@@ -51,7 +51,9 @@ def gather_user_data() -> tuple:
     ).strip()
 
     # Get project title
-    title = input(f"\n{bcolors.WARNING}The name of your project{bcolors.ENDC} (MyApp) ")
+    title = input(
+        f"\n{bcolors.WARNING}The name of your project{bcolors.ENDC} (MyApp) "
+    )
 
     # Get project short description
     description = input(
@@ -143,7 +145,9 @@ def gather_user_data() -> tuple:
     )
 
     # Versioning scheme
-    versioning = input(f"\n{bcolors.WARNING}Versioning (semver) {bcolors.ENDC}")
+    versioning = input(
+        f"\n{bcolors.WARNING}Versioning (semver) {bcolors.ENDC}"
+    )
 
     # Authors/contributors
     authors = []
@@ -151,7 +155,9 @@ def gather_user_data() -> tuple:
         f"\n{bcolors.WARNING}List any main authors that helped contribute{bcolors.ENDC}"
     )
     while True:
-        author_name = input(f"{bcolors.WARNING}The name of the author: {bcolors.ENDC}")
+        author_name = input(
+            f"{bcolors.WARNING}The name of the author: {bcolors.ENDC}"
+        )
         if author_name == "":
             break
 
@@ -172,7 +178,9 @@ def gather_user_data() -> tuple:
         )
 
     # License for the project
-    license = input(f"\n{bcolors.WARNING}Project license (MIT): {bcolors.ENDC}")
+    license = input(
+        f"\n{bcolors.WARNING}Project license (MIT): {bcolors.ENDC}"
+    )
 
     # Any last notes
     acknowledgements = []
@@ -211,7 +219,9 @@ def gather_user_data() -> tuple:
         authors = ""
 
     if license == "":
-        license = "We use the MIT license, see [LICENSE.md](LICENSE.md) for details"
+        license = (
+            "We use the MIT license, see [LICENSE.md](LICENSE.md) for details"
+        )
 
     if acknowledgements == []:
         acknowledgements = ""
@@ -312,7 +322,10 @@ def gather_user_data() -> tuple:
     if acknowledgements == "":
         acknowledgements_data = ("Acknowledgements", "")
     else:
-        acknowledgements_data = ("Acknowledgements", [("0", ["ul", acknowledgements])])
+        acknowledgements_data = (
+            "Acknowledgements",
+            [("0", ["ul", acknowledgements])],
+        )
 
     # Return the data
     return (

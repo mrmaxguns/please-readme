@@ -18,11 +18,9 @@ setuptools.setup(
         "License :: OSI Approved :: MIT License",
         "Operating System :: OS Independent",
     ],
-    python_requires='>=3.6',
-    entry_points ={
-        'console_scripts': [
-            'pleasereadme = pleasereadme.entrypoint:main'
-        ]
+    python_requires=">=3.6",
+    entry_points={
+        "console_scripts": ["pleasereadme = pleasereadme.entrypoint:main"]
     },
-    keywords = 'readme generator creator maker commandline python package'
+    keywords="readme generator creator maker commandline python package",
 )
