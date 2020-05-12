@@ -1,5 +1,7 @@
 # Please Readme
-We love programming, but one thing we have to do is write readmes. Wouldn't it be easier if we could just have a general structure we can use every time to minimize energy and maximize the output? please-readme does just that. \n\nWe love your contributions, so go ahead, look below and see how to contribute. P.S: for those asking, yes this readme was basically made by please-readme.
+We love programming, but one thing we have to do is write readmes. Wouldn't it be easier if we could just have a general structure we can use every time to minimize energy and maximize the output? please-readme does just that.
+
+We love your contributions, so go ahead, look below and see how to contribute. P.S: for those asking, yes this readme was basically made by please-readme.
 
 ## Getting Started
 Here we will go through how to set up a copy of please-readme on your local machine for development purposes. See `SIMPLE_USAGE.md` for how to install and use the package.
