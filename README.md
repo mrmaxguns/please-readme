@@ -46,4 +46,4 @@ We use [SemVer](semver.org) for versioning. For the versions available, see the 
 We use the MIT license, see [LICENSE.md](LICENSE.md) for details
 
 ## Acknowledgements
-* Thanks so much to [PurpleBooth's README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2)
+* Thanks so much to [PurpleBooth's README template](https://gist.github.com/PurpleBooth/109311bb0361f32d87a2) for providing inspiration and guidance.
