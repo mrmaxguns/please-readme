@@ -5,7 +5,7 @@ with open("SIMPLE_USAGE.md", "r") as fh:
 
 setuptools.setup(
     name="please-readme",
-    version="0.5.6",
+    version="1.0.0",
     author="Maxim Rebguns",
     author_email="mrmaxguns@gmail.com",
     description="A readme generation package",
@@ -22,5 +22,5 @@ setuptools.setup(
     entry_points={
         "console_scripts": ["pleasereadme = pleasereadme.entrypoint:main"]
     },
-    keywords="readme generator creator maker commandline python package",
+    keywords="readme README md markdown generator creator maker commandline python package",
 )

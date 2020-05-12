@@ -134,9 +134,7 @@ class CustomReadme:
                             template += f"\n* {item}"
                     elif option == "ol":
                         for enumeration_tuple in enumerate(part_data[1]):
-                            template += (
-                                f"\n{enumeration_tuple[0]+1}. {enumeration_tuple[1]}"
-                            )
+                            template += f"\n{enumeration_tuple[0]+1}. {enumeration_tuple[1]}"
                     else:
                         template += f"\n {part_data[1]}"
 

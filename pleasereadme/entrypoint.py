@@ -23,7 +23,7 @@ def main():
     args = vars(main_parser.parse_args())
 
     if args["version"]:
-        print("v0.5.6")
+        print("v1.0.0")
         quit()
 
     data = gather_user_data.gather_user_data()
