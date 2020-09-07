@@ -19,8 +19,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     python_requires=">=3.6",
-    entry_points={
-        "console_scripts": ["pleasereadme = pleasereadme.entrypoint:main"]
-    },
+    entry_points={"console_scripts": ["pleasereadme = pleasereadme.entrypoint:main"]},
     keywords="readme README md markdown generator creator maker commandline python package",
 )
